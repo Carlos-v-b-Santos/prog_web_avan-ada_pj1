@@ -54,8 +54,7 @@
                     {{-- Carlos troca esse "#" pelo catálogo de produtos--}}
                     <li class="nav-item"><a class="nav-link" href="#">Catálogo</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('sobre') }}">Sobre Nós</a></li>
-                    {{-- Bruna troca esse "#" pelo Fale Conosco --}}
-                    <li class="nav-item"><a class="nav-link" href="#">Fale Conosco</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('mensagens.create') }}">Fale Conosco</a></li>
 
                     {{-- Lusca  adicionar aqui o login --}}
                 </ul>
