@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SiteController;
+use App\Http\Controllers\ProfileController;
 
 Route::get('/', [SiteController::class, 'home'])->name('home');
 Route::get('/sobre', [SiteController::class, 'sobre'])->name('sobre');
