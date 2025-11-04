@@ -12,7 +12,7 @@
 
     <div class="mt-5">
         {{-- Carlos: esse botao vai levar ao catalogo --}}
-        <a href="#" class="btn btn-sol btn-lg me-2">Ver Catálogo</a>
+        <a href="{{ route( 'catalogo') }}" class="btn btn-sol btn-lg me-2">Ver Catálogo</a>
 
         {{-- pagina Sobre Nos --}}
         <a href="{{ route('sobre') }}" class="btn btn-outline-light btn-lg">Sobre Nós</a>

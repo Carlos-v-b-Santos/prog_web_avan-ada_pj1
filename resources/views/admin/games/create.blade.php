@@ -26,7 +26,7 @@
         </div>
 
         <button type="submit" class="btn btn-primary">Salvar Produto</button>
-        <a href="{{ route('admin.games.index') }}" class="btn btn-secondary">Cancelar</a>
+        <a href="{{ route('games.index') }}" class="btn btn-secondary">Cancelar</a>
     </form>
 </div>
 @endsection

@@ -12,13 +12,23 @@ class MensagemController extends Controller
      */
     public function index()
     {
-        // 1. Acessa o Model e busca todos os registros.
-        // Requisito: listar em ordem decrescente de data (mais recente primeiro).
-        $mensagens = Mensagem::orderBy('created_at', 'desc')->get();
+        // 1. Verifica se o usuário está autenticado
+        if (auth()->check()) {
+            // 2. (SE ESTIVER AUTENTICADO): Executa a lógica normal
+            // Requisito: listar em ordem decrescente de data (mais recente primeiro).
+            $mensagens = Mensagem::orderBy('created_at', 'desc')->get();
 
-        // 2. Retorna a view, passando a lista de mensagens para ela.
-        // A função compact('mensagens') é um atalho para ['mensagens' => $mensagens]
-        return view('mensagens.index', compact('mensagens'));
+            // 3. Retorna a view das mensagens
+            return view('mensagens.index', compact('mensagens'));
+
+        } else {
+            
+            // 4. (SE NÃO ESTIVER AUTENTICADO): Redireciona para o "menu inicial"
+            //    Estou assumindo que sua rota inicial se chama 'home'.
+            //    Se tiver outro nome (como 'inicial'), apenas troque 'home'.
+            return redirect()->route('home') 
+                             ->with('error', 'Você precisa estar logado para acessar esta página.');
+        }
     }
 
     /**

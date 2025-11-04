@@ -51,12 +51,36 @@
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Início</a></li>
-                    {{-- Carlos troca esse "#" pelo catálogo de produtos--}}
-                    <li class="nav-item"><a class="nav-link" href="{{ route('catalogo.index') }}">Catálogo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('catalogo') }}">Catálogo</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('sobre') }}">Sobre Nós</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('mensagens.create') }}">Fale Conosco</a></li>
 
-                    {{-- Lusca  adicionar aqui o login --}}
+                    {{-- 🔥 LUCAS: login/cadastro/logout --}}
+                    @guest
+                        <li class="nav-item">
+                            <a class="nav-link text-warning fw-bold" href="{{ route('login') }}">Entrar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-warning fw-bold" href="{{ route('register') }}">Cadastrar</a>
+                        </li>
+                    @else
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-warning fw-bold" href="#" role="button"
+                            data-bs-toggle="dropdown">
+                                {{ Auth::user()->name }}
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="{{ route('games.index') }}">Gerenciar jogos</a></li>
+                                <li><a class="dropdown-item" href="{{ route('mensagens.index') }}">Mensagens recebidas</a></li>
+                                <li>
+                                    <form method="POST" action="{{ route('logout') }}">
+                                        @csrf
+                                        <button class="dropdown-item" type="submit">Sair</button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                    @endguest
                 </ul>
             </div>
         </div>

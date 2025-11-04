@@ -13,21 +13,21 @@ class GameController extends Controller
      */
     public function index()
     {
+        // A lógica é a mesma: buscar todos os games
         $games = Game::latest()->get();
-        return view('catalogo.index', compact('games'));
+        
+        // Mas a VIEW é diferente: a view do admin
+        return view('admin.games.index', compact('games'));
     }
 
     /**
      * Display a listing of the resource for Admin.
      * (Página de Cadastro de games/Serviços)
      */
-    public function adminIndex()
+    public function catalogo()
     {
-        // A lógica é a mesma: buscar todos os games
         $games = Game::latest()->get();
-        
-        // Mas a VIEW é diferente: a view do admin
-        return view('admin.games.index', compact('games'));
+        return view('catalogo.index', compact('games'));
     }
 
     /**
@@ -66,7 +66,7 @@ class GameController extends Controller
         Game::create($validatedData);
 
         // 4. REDIRECIONAR DE VOLTA
-        return redirect()->route('admin.games.index')
+        return redirect()->route('games.index')
                          ->with('success', 'Game cadastrado com sucesso!');
     }
 
@@ -121,7 +121,7 @@ class GameController extends Controller
         $game->update($validatedData);
 
         // 4. REDIRECIONAR DE VOLTA
-        return redirect()->route('admin.games.index')
+        return redirect()->route('games.index')
                          ->with('success', 'game atualizado com sucesso!');
     }
 
@@ -140,7 +140,7 @@ class GameController extends Controller
         $game->delete();
 
         // 3. REDIRECIONAR DE VOLTA
-        return redirect()->route('admin.games.index')
+        return redirect()->route('games.index')
                          ->with('success', 'game excluído com sucesso!');
     }
 }
