@@ -93,11 +93,59 @@
 
     {{-- Rodape--}}
     <footer>
-        <p>&copy; 2025 Sunlight Games - Todos os direitos reservados.</p>
-        <p>Desenvolvido por Carlos, Odair, Lucas e Bruna.</p>
-    </footer>
+    <div class="container py-4">
 
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <div class="row align-items-center text-center text-md-start">
+
+            <div class="col-12 col-md-4 mb-4 mb-md-0">
+                <h6 class="text-warning fw-bold mb-3" style="font-size: 0.9rem;">Fale Conosco ☀️</h6>
+
+                <p class="small mb-2 text-light" style="font-size: 0.8rem;">
+                    <i class="bi bi-geo-alt-fill text-warning me-2"></i>
+                    Rua da Luz, 123 - Centro, Corumbá - MS
+                </p>
+
+                <p class="small mb-2 text-light" style="font-size: 0.8rem;">
+                    <i class="bi bi-telephone-fill text-warning me-2"></i>
+                    (67) 3234-6813
+                </p>
+
+                <p class="small mb-2 text-light" style="font-size: 0.8rem;">
+                    <i class="bi bi-envelope-fill text-warning me-2"></i>
+                    contato@sunlightgames.com.br
+                </p>
+
+                <a href="https://wa.me/556732346813"
+                   class="d-inline-flex align-items-center text-success fw-bold small"
+                   target="_blank" style="text-decoration: none; font-size: 0.8rem;">
+                    <i class="bi bi-whatsapp fs-6 me-2"></i> WhatsApp
+                </a>
+            </div>
+
+            <div class="col-12 col-md-4 mb-4 mb-md-0 d-flex flex-column justify-content-center align-items-center">
+                <p class="text-light mb-1" style="font-size: 0.8rem;">
+                    &copy; 2025 <span class="text-warning">Sunlight Games</span> - Todos os direitos reservados.
+                </p>
+                <p class="text-secondary mb-0" style="font-size: 0.75rem;">
+                    Desenvolvido por Lucas, Odair, Carlos e Bruna.
+                </p>
+            </div>
+
+            <div class="col-12 col-md-4 d-flex justify-content-md-end justify-content-center">
+                <div class="mapa-container shadow-sm"
+                     style="width: 110px; height: 80px; border-radius: 8px; overflow: hidden;">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3798.650344414815!2d-57.63176485235737!3d-19.00159493541092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93870bf1a726e20f%3A0x859a335b1dc2361!2sUFMS%2FCPAN%20-%20Unidade%20II!5e0!3m2!1spt-BR!2sbo!4v1762284164315!5m2!1spt-BR!2sbo"
+                        width="100%" height="100%" style="border:0;"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </body>
 </html>
