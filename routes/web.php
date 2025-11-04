@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\GameController;
-
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\MensagemController;
 
 Route::get('/', [SiteController::class, 'home'])->name('home');
@@ -21,4 +21,16 @@ Route::prefix('admin')->group(function () {
     // Criamos uma rota 'index' separada para o admin, que lista os produtos 
     Route::get('games', [GameController::class, 'adminIndex'])->name('admin.games.index');
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';
 
