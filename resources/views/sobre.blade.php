@@ -6,7 +6,7 @@
 <div class="container my-5">
     <div class="text-center mb-5">
         <h1 class="fw-bold text-warning">Quem Somos ☀️</h1>
-        <p class="lead">A luz que guia os gamers até seus jogos perfeitos.</p>
+        <p class="lead">A luz que guia os gamers até seus jogos preferidos.</p>
     </div>
 
     <div class="row align-items-center">
